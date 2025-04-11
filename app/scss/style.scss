@@ -1,0 +1,20 @@
+@import 'basic/reset';
+@import 'basic/fonts';
+@import 'basic/vars';
+@import 'basic/mixin';
+@import 'basic/libs';
+@import 'basic/global';
+
+@import 'components/header';
+@import 'components/footer';
+@import 'components/btn';
+@import 'components/title';
+@import 'components/menu-btn';
+@import 'components/buttons-tabs';
+@import 'components/benefits-items';
+
+@import 'home/stop';
+@import 'home/mechanism';
+@import 'home/functions';
+@import 'home/tariff';
+@import 'home/cases';

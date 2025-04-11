@@ -1,0 +1,231 @@
+.header {
+  color: $white;
+  @include r($tablet) {
+    @include bg;
+    background-position: left;
+    background-image: url("../images/start-bg.webp");
+    border-radius: 0 0 32px 32px;
+  }
+  @include r($phone) {
+    background-image: url("../images/start-bg-mobile.webp");
+    border-radius: 0 0 16px 16px;
+  }
+
+  &__wrapper {
+    border-radius: 0 0 32px 32px;
+    border: 1px solid #191919;
+    background: linear-gradient(255deg, #100B84 0.26%, #04031E 97.6%);
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    min-height: 720px;
+    @include r($lg) {
+      min-height: 840px;
+    }
+    @include r($tablet) {
+      background-image: none;
+    }
+    @include r($sm) {
+      min-height: 740px;
+    }
+  }
+
+  &__lines {
+    position: absolute;
+    right: -50px;
+    top: 0;
+  }
+
+  &__top,
+  &__content {
+    margin: 0 32px;
+    @media (max-width: 610px) {
+      margin: 0;
+    }
+  }
+
+  &__top,
+  &__top-right {
+    @include flex-center;
+    justify-content: space-between;
+  }
+
+  &__top-logo, &__top-btn {
+    max-width: 217px;
+    width: 100%;
+  }
+
+  &__top-btn {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__top {
+    padding-top: 32px;
+    @include r($phone) {
+      padding-top: 16px;
+    }
+
+    &-logo {
+      display: flex;
+      position: relative;
+      z-index: 500;
+    }
+  }
+
+  &__top-right {
+    display: flex;
+    gap: 30px;
+    @media (max-width: 1290px) {
+      flex-direction: column-reverse;
+      position: absolute;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100vh;
+      background-color: $black-deep;
+      margin: 0;
+      padding: 140px 32px 0;
+      gap: 50px;
+      transition: all .6s;
+      &.active {
+        left: 0;
+        display: flex;
+      }
+    }
+    @media (max-width: 610px) {
+      padding: 120px 15px 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    font-size: 14px;
+    gap: 25px;
+    line-height: 1;
+    @media(max-width: 1290px) {
+      flex-direction: column;
+      font-size: 18px;
+      gap: 40px;
+    }
+    @include r($sm) {
+      font-size: 16px;
+    }
+  }
+
+  &__link {
+    transition: color .3s, opacity .3s;
+
+    &:hover {
+      color: $accent;
+    }
+
+    &:focus {
+      opacity: .4;
+    }
+  }
+
+  &__content {
+    margin-top: auto;
+    margin-bottom: 40px;
+    margin-right: 180px;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 1300px) {
+      margin-right: 55px;
+    }
+    @include r($lg) {
+      flex-direction: column;
+      margin-right: 0;
+      gap: 40px;
+    }
+    @include r($sm) {
+      margin-bottom: 24px;
+    }
+
+    &-text {
+      margin-top: auto;
+      max-width: 495px;
+      width: 100%;
+      @include r($desktop) {
+        max-width: 350px;
+      }
+
+      p {
+        color: $gray;
+        font-size: 14px;
+        max-width: 245px;
+      }
+    }
+  }
+
+  &__right {
+    max-width: 670px;
+    width: 100%;
+    @include r($desktop) {
+      max-width: 510px;
+      margin-left: auto;
+    }
+    @include r($lg) {
+      margin-left: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    @include r($lg) {
+      margin-bottom: 20px;
+    }
+
+    img {
+      display: inline-block;
+      transform: translateY(2px);
+    }
+  }
+
+  &__text {
+    color: $gray100;
+    max-width: 470px;
+    font-size: 18px;
+    margin-bottom: 50px;
+    line-height: 1.6;
+    @include r($lg) {
+      margin-bottom: 40px;
+    }
+    @include r($phone) {
+      line-height: 1.55;
+    }
+
+    @media (max-width: 373px) {
+      font-size: 16px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 15px;
+    @media (max-width: 373px) {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+    }
+
+    &-btn {
+      &--cases {
+        @include r($sm) {
+          display: none;
+        }
+      }
+
+      &--mobile {
+        display: none;
+        @include r($sm) {
+          display: block;
+        }
+      }
+    }
+  }
+}
