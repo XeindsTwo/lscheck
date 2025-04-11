@@ -1,6 +1,7 @@
 .cases {
   .swiper {
     border-radius: 32px;
+    cursor: grab;
   }
 
   .swiper-slide {
@@ -37,7 +38,6 @@
   }
 
   &__wrapper {
-    overflow-x: hidden;
     @include r($tablet) {
       background-color: $gray200;
       border-radius: 32px;
@@ -88,7 +88,7 @@
 
   &__buttons {
     display: flex;
-    gap: 16px;
+    gap: 12px;
     margin-bottom: 40px;
     @media (max-width: 1100px) {
       margin-bottom: 32px;
@@ -97,8 +97,8 @@
 
   &__btn {
     @include flex-center;
-    width: 40px;
-    height: 40px;
+    width: 46px;
+    height: 46px;
     background-color: $white;
     border-radius: 50%;
     transition: background-color .4s, opacity .4s;
@@ -202,7 +202,7 @@
   &__image {
     position: relative;
     width: 100%;
-    margin: 50px 0 32px;
+    margin: 80px 0 32px;
     padding-right: 50px;
     border-bottom: 2px solid $gray-pale;
     @media (max-width: 1100px) {

@@ -2,12 +2,11 @@
 @import 'basic/fonts';
 @import 'basic/vars';
 @import 'basic/mixin';
-@import 'basic/libs';
 @import 'basic/global';
 
+@import 'components/btn';
 @import 'components/header';
 @import 'components/footer';
-@import 'components/btn';
 @import 'components/title';
 @import 'components/menu-btn';
 @import 'components/buttons-tabs';
