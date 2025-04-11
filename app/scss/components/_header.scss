@@ -36,11 +36,11 @@
     flex-direction: column;
     min-height: 720px;
     @include r($lg) {
-      min-height: 840px;
+      min-height: auto;
       margin: 0 -10px;
     }
-    @include r($sm) {
-      min-height: 640px;
+    @media (max-width: 860px) {
+      min-height: 610px;
     }
   }
 
@@ -211,6 +211,7 @@
     margin-bottom: 60px;
     margin-right: 180px;
     display: flex;
+    align-items: flex-end;
     justify-content: space-between;
     @media (max-width: 1300px) {
       margin-right: 55px;
@@ -219,30 +220,64 @@
       flex-direction: column;
       margin-right: 18px;
       gap: 40px;
+      margin-top: 70px;
+    }
+    @media (max-width: 860px) {
+      align-items: flex-start;
+    }
+    @media (max-width: 650px) {
+      margin-top: auto;
+      margin-bottom: 40px;
     }
     @include r($sm) {
-      margin-bottom: 24px;
+      margin-bottom: 32px;
     }
 
-    &-text {
+    &-decor {
       margin-top: auto;
       max-width: 495px;
       width: 100%;
       @include r($desktop) {
-        max-width: 350px;
+        max-width: 430px;
       }
+      @include r($lg) {
+        margin-right: auto;
+        margin-bottom: -210px;
+      }
+      @media (max-width: 860px) {
+        margin-bottom: 0;
+      }
+    }
+  }
 
-      p {
-        color: $gray;
-        font-size: 14px;
-        max-width: 245px;
-      }
+  &__book {
+    @include objectCoverBg;
+    @include r($desktop) {
+      width: 365px;
+      height: auto;
+    }
+    @include r($lg) {
+      width: 330px;
+    }
+    @media (max-width: 860px) {
+      width: 290px;
+      position: absolute;
+      right: 0;
+      bottom: -120px;
+    }
+    @media (max-width: 700px) {
+      width: 250px;
+    }
+    @media (max-width: 650px) {
+      display: none;
     }
   }
 
   &__right {
     max-width: 670px;
     width: 100%;
+    position: relative;
+    z-index: 30;
     @include r($desktop) {
       max-width: 560px;
       margin-left: auto;
